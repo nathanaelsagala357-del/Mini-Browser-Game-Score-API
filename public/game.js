@@ -10,7 +10,7 @@ let waitTimeout = null;
 let gameActive = false;
 
 startBtn.addEventListener('click', function() {
-    const name = playerName.ariaValueMax.trim();
+    const name = playerName.value.trim();
 
     if (name === '') {
         message.textContent = 'Please enter your name first!';
@@ -27,12 +27,12 @@ startBtn.addEventListener('click', function() {
     waitTimeout = setTimeout(function() {
         circle.className = 'circle go';
         message.textContent = 'CLICK NOW!';
-        startTime = Date.now;
+        startTime = Date.now();
         gameActive = true;
     }, delay)
 });
 
-circle.addEventListener('circle', function() {
+circle.addEventListener('click', function() {
     if (!gameActive) {
         clearTimeout(waitTimeout);
         circle.className = 'circle waiting';
@@ -48,7 +48,7 @@ circle.addEventListener('circle', function() {
     message.textContent = 'Nice! Saving your score ...';
     result.textContent = 'Your Time: ' + reactionTime + 'ms';
 
-    saveScore(playerName.ariaValueMax.trim(), reactionTime);
+    saveScore(playerName.value.trim(), reactionTime);
 });
 
 function saveScore(name, time) {
