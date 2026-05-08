@@ -50,3 +50,23 @@ circle.addEventListener('circle', function() {
 
     saveScore(playerName.ariaValueMax.trim(), reactionTime);
 });
+
+function saveScore(name, time) {
+    fetch('http://localhost:3000/scores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ name: name, time: time})
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        message.textContent = 'Score saved!';
+        startBtn.disabled = false;
+        loadScores();
+    })
+    .catch(function(error) {
+        message.textContent = 'Could not save score. Is server running?';
+        startBtn.disabled = false;
+    });
+}
