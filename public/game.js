@@ -70,3 +70,20 @@ function saveScore(name, time) {
         startBtn.disabled = false;
     });
 }
+
+function loadScores() {
+    fetch('http://localhost:3000/scores')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(scores) {
+        scoreList.innerHTML = '';
+        scores.forEach(function(entry) {
+            const li = document.createElement('li');
+            li.textContent = entry.name + ' - ' + entry.time + 'ms';
+            scoreList.appendChild(li);
+        });
+    });
+}
+
+loadScores();
