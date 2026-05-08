@@ -50,3 +50,62 @@ h1 {
 .go {
     background-color: #4caf50;
 }
+
+#message {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+#result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 20px;
+    min-height: 30px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    width: 160px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c73652;
+}
+
+.leaderboard {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.leaderboard h2 {
+    margin-bottom: 15px;
+    color: #e94560;
+}
+
+#scoreList {
+    list-style-position: inside;
+    line-height: 2;
+}
