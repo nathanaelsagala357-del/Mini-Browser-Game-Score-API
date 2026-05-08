@@ -31,3 +31,22 @@ startBtn.addEventListener('click', function() {
         gameActive = true;
     }, delay)
 });
+
+circle.addEventListener('circle', function() {
+    if (!gameActive) {
+        clearTimeout(waitTimeout);
+        circle.className = 'circle waiting';
+        message.textContent = 'Too early! Wait for green. Try again.'
+        result.textContent = '';
+        startBtn.disabled = false;
+        return;
+    }
+
+    const reactionTime = Date.now() - startTime;
+    gameActive = false;
+    circle.className = 'circle waiting';
+    message.textContent = 'Nice! Saving your score ...';
+    result.textContent = 'Your Time: ' + reactionTime + 'ms';
+
+    saveScore(playerName.ariaValueMax.trim(), reactionTime);
+});
