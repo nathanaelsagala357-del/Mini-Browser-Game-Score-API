@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial_scale=1.0" />
+    <title>Reflex Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Reflex Game</h1>
+        <p class="instructions">Wait for the circle to turn <strong>green</strong>, then click it as fast as you can!</p>
+
+        <div id="circle" class="circle waiting"></div>
+
+        <p id="message">Enter your name and press Start</p>
+        <p id="result"></p>
+
+        <div class="controls">
+            <input type="text" id="playerName" placeholder="Your Name" maxlength="20" />
+            <button id="startBtn">Start Game</button>
+        </div>
+        
+        <div class="leaderboard">
+            <h2>leaderboard (Top 5)</h2>
+            <ol id="scoreList">
+                <li>No scores yet</li>
+            </ol>
+        </div>
+    </div>
+<script src="game.js"></script>
+</body>
+</html>
