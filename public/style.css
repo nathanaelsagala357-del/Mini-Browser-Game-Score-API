@@ -12,3 +12,20 @@ body {
     justify-content: center;
     padding: 40px 20px;
 }
+
+.container {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #e94560;
+}
+
+.instructions {
+    margin-bottom: 30px;
+    color: #aaa;
+}
