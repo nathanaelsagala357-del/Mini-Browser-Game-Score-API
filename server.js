@@ -11,7 +11,7 @@ app.use(express.static('public'));
 let scores = [];
 
 app.post('/scores', function(req, res) {
-    const { name, time} = req.body();
+    const { name, time} = req.body;
 
     if (!name || !time) {
         return res.status(400).json({ error: 'Name and time are required'});
