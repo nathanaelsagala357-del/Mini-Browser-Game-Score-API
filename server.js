@@ -29,3 +29,7 @@ app.post('/scores', function(req, res) {
 app.get('/scores', function(req, res) {
     res.json(scores);
 });
+
+app.listen(PORT, function() {
+    console.log('Server running at http://localhost:' + PORT);
+});
